@@ -1,0 +1,46 @@
+{
+    "pluginAlias": "Homebridge Ping Shutdown",
+    "pluginType": "platform",
+    "singular": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string",
+          "required": true,
+          "default": "Ping Shutdown Service"
+        },
+        "updateInterval": {
+          "title": "Ping interval [s]",
+          "type": "number",
+          "required": true,
+          "default": 30
+        },
+        "pbs": {
+          "title": "Missed Pings before Shutdown",
+          "type": "number",
+          "required": true,
+          "default": 3
+        },
+        "deviceList": {
+            "title": "Devices to be mointored",
+            "type": "array",
+            "items": {
+                "title": "Devices",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "title": "Name in Homebrdige",
+                        "type": "string"
+                    },
+                    "ip": {
+                        "title": "IP Address to ping",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+      }
+    }
+}
